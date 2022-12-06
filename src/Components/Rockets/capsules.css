@@ -148,8 +148,7 @@
     background: white;
     padding: 12px 20px;
   }
-  
-  /* ================== MEDIA QUERIES(Medium Devies) ================== */
+ 
   @media screen and (max-width: 1024px) {
     .dropdown {
       position: relative;
@@ -157,7 +156,6 @@
     }
   }
   
-  /* ================== MEDIA QUERIES(Small Devies) ================== */
   @media screen and (max-width: 600px) {
     .dropdown {
       position: relative;

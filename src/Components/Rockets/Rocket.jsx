@@ -1,6 +1,6 @@
 import Modal from "./Modal";
 
-function Capsule(props) {
+function Rockets(props) {
   return (
     <>
       <div className="flex justify-center">
@@ -31,4 +31,4 @@ function Capsule(props) {
   );
 }
 
-export default Capsule;
+export default Rockets;

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
-import Capsule from "./capsule";
+import Capsule from "./Rocket";
 import Pagination from "../page";
 import "./capsules.css";
 
 function Capsules() {
-  let d; //used in converting Original Launch Date
+  let d; 
   const [capsules, setCapsules] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [capsulesPerPage, setCapsulesPerPage] = useState(12);
@@ -13,15 +13,13 @@ function Capsules() {
   const [suggestions, setSuggestions] = useState([]);
   let [matches, setMatches] = useState([]);
 
-  //API URL
   let [url, setUrl] = useState("https://api.spacexdata.com/v3/capsules");
 
-  //Filters
   function resetFilter() {
     const tempUrl = "https://api.spacexdata.com/v3/capsules";
     setUrl(tempUrl);
   }
-  //Status Filter
+
   function getByStatus(e) {
     e.preventDefault();
     let status = e.target.innerHTML;
@@ -30,7 +28,6 @@ function Capsules() {
     status = "";
   }
 
-  //Type Filter
   function getByType(e) {
     e.preventDefault();
     let type = e.target.innerHTML;
@@ -40,7 +37,6 @@ function Capsules() {
     type = "";
   }
 
-  //Year Filter
   const getByYear = (year) => {
     if (year.length > 0) {
       matches = capsules.filter(function (capsule) {
@@ -71,7 +67,6 @@ function Capsules() {
     fetchCapsules();
   }, [url]);
 
-  //Capsules per Page
   const indexOfLastCapsule = currentPage * capsulesPerPage;
   const indexOfFirstCapsule = indexOfLastCapsule - capsulesPerPage;
   const currentCapsules = capsules.slice(
@@ -79,7 +74,6 @@ function Capsules() {
     indexOfLastCapsule
   );
 
-  //Change Page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (

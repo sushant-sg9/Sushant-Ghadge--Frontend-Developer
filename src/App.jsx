@@ -1,5 +1,5 @@
 import Header from "./Components/Header";
-import Capsules from "./Components/Capsules/capsules";
+import Capsules from "./Components/Rockets/capsules";
 import Footer from "./Components/Footer";
 
 function App() {
